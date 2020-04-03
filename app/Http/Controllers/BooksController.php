@@ -28,8 +28,7 @@ class BooksController extends Controller
     public function index(){
         $books = Book::all();
 
-        return response($books)->header('Access-Control-Allow-Origin', '*');
-        // return response($books);
+        return response($books);
     }
 
     public function indexlaravel(){
@@ -81,10 +80,7 @@ class BooksController extends Controller
         $book->delete();
 
         $books = Book::all();
-        // return response($books);
-        return response($books)->header('Access-Control-Allow-Origin', '*')->header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE, PUT');
-        // return response($id)->header('Access-Control-Allow-Origin', '*')->header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE, PUT');
-        // return response($id);
+        return response($books);
     }
 
     public function destroylaravel($id){
