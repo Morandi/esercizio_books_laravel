@@ -91,6 +91,7 @@ class BooksController extends Controller
         $book = Book::find($id);
         $book->delete();
 
-        return redirect('/home')->header('Access-Control-Allow-Origin', '*')->with('success', 'Libro eliminato!!');
+        // return redirect('/home')->header('Access-Control-Allow-Origin', '*')->with('success', 'Libro eliminato!!');
+        return redirect('/home')->with('success', 'Libro eliminato!!');
     }
 }
