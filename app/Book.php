@@ -20,7 +20,7 @@ class Book extends Model
         $book = $this->find($data['id']);
         $book->titolo = $data['titolo'];
         $book->autore = $data['autore'];
-        $book->autore = $data['genere'];
+        $book->genere = $data['genere'];
         $book->save();
         return 1;
     }

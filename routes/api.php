@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('libri')->group(function(){
     Route::get('/elencoLibri','BooksController@index');
-    Route::post('/aggiornaLibro','BooksController@update');
+    Route::post('/aggiornaLibro/{id}','BooksController@update');
     Route::post('/eliminaLibro/{id}','BooksController@destroy');
     // Route::post('/delete/book/{id}','BooksController@destroy');
 });

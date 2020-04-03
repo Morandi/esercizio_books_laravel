@@ -59,6 +59,9 @@ class BooksController extends Controller
 
         $data['id'] = $id;
         $book->updateBook($data);
+
+        $books = Book::all();
+        return response($books);
     }
 
     public function updatelaravel(Request $request, $id){
