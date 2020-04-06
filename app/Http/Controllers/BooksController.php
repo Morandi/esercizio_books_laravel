@@ -22,6 +22,20 @@ class BooksController extends Controller
         ]);
        
         $book->saveBook($data);
+        
+        $books = Book::all();
+        return response($books);
+    }
+    
+    public function storeLaravel(Request $request){
+        $book = new Book();
+        $data = $this->validate($request, [
+            'titolo' => 'required',
+            'autore' => 'required',
+            'genere' => 'required'
+        ]);
+       
+        $book->saveBook($data);
         return redirect('/home')->with('success', 'Inserito un nuovo libro! Attendere qualche istante');
     }
 
@@ -60,6 +74,7 @@ class BooksController extends Controller
         $data['id'] = $id;
         $book->updateBook($data);
 
+        // Li ritorno nel caso volessi ricaricare l'array dei libri sul frontend
         $books = Book::all();
         return response($books);
     }

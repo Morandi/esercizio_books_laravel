@@ -21,5 +21,6 @@ Route::prefix('libri')->group(function(){
     Route::get('/elencoLibri','BooksController@index');
     Route::post('/aggiornaLibro/{id}','BooksController@update');
     Route::post('/eliminaLibro/{id}','BooksController@destroy');
+    Route::post('/inserisciLibro', 'BooksController@store');
     // Route::post('/delete/book/{id}','BooksController@destroy');
 });
